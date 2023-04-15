@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Steeplechase.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #000080; font-weight: bold;}
+.s3 { color: #0000ff;}
+.s4 { color: #008080; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Steeplechase.py</font>
+</center></td></tr></table>
+<pre><span class="s0">&quot;&quot;&quot; 
+File: Steeplechase.py 
+Name: Jim Chen 
+--------------------------------- 
+TODO: 
+&quot;&quot;&quot;</span>
+
+<span class="s2">from </span>karel.stanfordkarel <span class="s2">import </span>*
+
+
+<span class="s2">def </span>main():
+    <span class="s0">&quot;&quot;&quot; 
+    Karel crosses hurdles in a 12x12 world 
+    with a for loop  
+    &quot;&quot;&quot;</span>
+    <span class="s2">for </span>i <span class="s2">in </span>range(<span class="s3">11</span>):
+        <span class="s2">if </span>front_is_clear():
+            move()
+        <span class="s2">else</span>:
+            jump()
+            turn_left()
+
+
+<span class="s2">def </span>jump():
+    <span class="s0">&quot;&quot;&quot; 
+    pre-condition: 
+    post-condition: 
+    &quot;&quot;&quot;</span>
+    up()
+    cross()
+    down()
+
+
+<span class="s2">def </span>up():
+    <span class="s0">&quot;&quot;&quot; 
+    pre-condition: Karel is on the left,facing east. 
+    post-condition: Karel is on the upper left,facing north. 
+    &quot;&quot;&quot;</span>
+    turn_left()
+    <span class="s2">while not </span>right_is_clear():
+        move()
+<span class="s2">def </span>cross():
+    <span class="s0">&quot;&quot;&quot; 
+    pre-condition: Karel is on the upper left,facing north. 
+    post-condition: Karel is on the upper right,facing south. 
+    &quot;&quot;&quot;</span>
+    turn_right()
+    move()
+    turn_right()
+<span class="s2">def </span>down():
+    <span class="s0">&quot;&quot;&quot; 
+    pre-condition: Karel is on the upper right,facing south. 
+    post-condition: 
+    &quot;&quot;&quot;</span>
+    <span class="s2">while </span>front_is_clear():
+        move()
+
+
+
+
+
+<span class="s2">def </span>turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+
+
+
+
+
+
+
+<span class="s0"># ----- DO NOT MODIFY CODE BELOW THIS LINE ----- #</span>
+<span class="s2">if </span>__name__ == <span class="s4">'__main__'</span>:
+    execute_karel_task(main)
+</pre>
+</body>
+</html>
